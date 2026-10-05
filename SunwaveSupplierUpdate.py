@@ -1,6 +1,11 @@
 import csv
 import random
 from datetime import datetime
+from zoneinfo import ZoneInfo
+
+# Timezone settings
+SUPPLIER_TIMEZONE = "Europe/Budapest"
+CUSTOMER_TIMEZONE = "America/New_York"
 
 STOCK_CHANGE = 15
 PRICE_CHANGE_PERCENT = 10
@@ -56,15 +61,32 @@ with open(CSV_FILE, "w", encoding="utf-8-sig", newline="") as file:
     writer.writeheader()
     writer.writerows(products)
 
+# 4. Formatting the timezones for both the customer and supplier
 
-# 4. Save the current state to the log
-current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+supplier_time = datetime.now(
+    ZoneInfo(SUPPLIER_TIMEZONE)
+)
+
+customer_time = supplier_time.astimezone(
+    ZoneInfo(CUSTOMER_TIMEZONE)
+)
+
+supplier_time_formatted = supplier_time.strftime(
+    "%Y-%m-%d %H:%M:%S %Z"
+)
+
+customer_time_formatted = customer_time.strftime(
+    "%Y-%m-%d %H:%M:%S %Z"
+)
+
+# 5. Save the current state to the log
 
 with open(LOG_FILE, "a", encoding="utf-8") as log_file:
 
-    log_file.write("=" * 50 + "\n")
-    log_file.write(current_time + "\n")
-    log_file.write("=" * 50 + "\n\n")
+log_file.write("=" * 50 + "\n")
+log_file.write(f"Supplier time: {supplier_time}\n")
+log_file.write(f"Customer time: {customer_time}\n")
+log_file.write("=" * 50 + "\n\n")
 
     for product in products:
 
