@@ -82,11 +82,11 @@ customer_time_formatted = customer_time.strftime(
 # 5. Save the current state to the log
 
 with open(LOG_FILE, "a", encoding="utf-8") as log_file:
+    log_file.write("=" * 50 + "\n")
+    log_file.write(f"Supplier time: {supplier_time}\n")
+    log_file.write(f"Customer time: {customer_time}\n")
+    log_file.write("=" * 50 + "\n\n")
 
-log_file.write("=" * 50 + "\n")
-log_file.write(f"Supplier time: {supplier_time}\n")
-log_file.write(f"Customer time: {customer_time}\n")
-log_file.write("=" * 50 + "\n\n")
 
     for product in products:
 
