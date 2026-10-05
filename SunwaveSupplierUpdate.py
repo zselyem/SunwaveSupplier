@@ -5,7 +5,10 @@ from zoneinfo import ZoneInfo
 
 # Timezone settings
 SUPPLIER_TIMEZONE = "Europe/Budapest"
+SUPPLIER_TIMEZONE_NAME = "Budapest"
+
 CUSTOMER_TIMEZONE = "America/New_York"
+CUSTOMER_TIMEZONE_NAME = "New York"
 
 STOCK_CHANGE = 15
 PRICE_CHANGE_PERCENT = 10
@@ -71,20 +74,32 @@ customer_time = supplier_time.astimezone(
     ZoneInfo(CUSTOMER_TIMEZONE)
 )
 
+supplier_offset = supplier_time.strftime("%z")
+customer_offset = customer_time.strftime("%z")
+
+supplier_offset = supplier_offset[:3] + ":" + supplier_offset[3:]
+customer_offset = customer_offset[:3] + ":" + customer_offset[3:]
+
 supplier_time_formatted = supplier_time.strftime(
-    "%Y-%m-%d %H:%M:%S %Z"
+    "%Y-%m-%d %H:%M:%S"
 )
 
 customer_time_formatted = customer_time.strftime(
-    "%Y-%m-%d %H:%M:%S %Z"
+    "%Y-%m-%d %H:%M:%S"
 )
 
 # 5. Save the current state to the log
 
 with open(LOG_FILE, "a", encoding="utf-8") as log_file:
     log_file.write("=" * 50 + "\n")
-    log_file.write(f"{SUPPLIER_TIMEZONE}: {supplier_time}\n")
-    log_file.write(f"{CUSTOMER_TIMEZONE}: {customer_time}\n")
+    log_file.write(
+        f"{SUPPLIER_TIMEZONE_NAME}: "
+        f"{supplier_time_formatted} GMT{supplier_offset}\n"
+    )
+    log_file.write(
+        f"{CUSTOMER_TIMEZONE_NAME}: "
+        f"{customer_time_formatted} GMT{customer_offset}\n"
+    )
     log_file.write("=" * 50 + "\n\n")
 
 
