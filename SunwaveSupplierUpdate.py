@@ -83,8 +83,8 @@ customer_time_formatted = customer_time.strftime(
 
 with open(LOG_FILE, "a", encoding="utf-8") as log_file:
     log_file.write("=" * 50 + "\n")
-    log_file.write(f"{SUPPLIER_TIMEZONE_NAME}: {supplier_time}\n")
-    log_file.write(f"{CUSTOMER_TIMEZONE_NAME}: {customer_time}\n")
+    log_file.write(f"{SUPPLIER_TIMEZONE}: {supplier_time}\n")
+    log_file.write(f"{CUSTOMER_TIMEZONE}: {customer_time}\n")
     log_file.write("=" * 50 + "\n\n")
 
 
