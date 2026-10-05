@@ -26,7 +26,7 @@ jobs:
           python-version: "3.x"
 
       - name: Run supplier update
-        run: python SunwaveProductUpdate.py
+        run: python SunwaveSupplierUpdate.py
 
       - name: Save changes
         run: |
