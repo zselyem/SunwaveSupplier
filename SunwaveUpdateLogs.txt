@@ -5354,3 +5354,88 @@ Sand-Free Beach Mat
 Stock: 85
 Price: 94.99
 
+==================================================
+Budapest: 2026-10-23 11:13:25 GMT+02:00
+New York: 2026-10-23 05:13:25 GMT-04:00
+==================================================
+
+Classic Beach Umbrella
+Stock: 46
+Price: 53.99
+
+Compact Beach Umbrella
+Stock: 35
+Price: 62.99
+
+Windproof Beach Umbrella
+Stock: 115
+Price: 31.99
+
+Pop-Up Beach Shelter
+Stock: 60
+Price: 54.99
+
+Beach Umbrella Base
+Stock: 48
+Price: 73.99
+
+Inflatable Beach Mattress
+Stock: 43
+Price: 51.99
+
+Folding Beach Lounger
+Stock: 140
+Price: 60.99
+
+Inflatable Beach Pillow
+Stock: 144
+Price: 78.99
+
+Reclining Beach Chair
+Stock: 101
+Price: 134.99
+
+Floating Lounge
+Stock: 23
+Price: 97.99
+
+Classic Beach Ball
+Stock: 122
+Price: 43.99
+
+Beach Paddle Set
+Stock: 3
+Price: 29.99
+
+Flying Disc
+Stock: 109
+Price: 50.99
+
+Water Volleyball Set
+Stock: 61
+Price: 71.99
+
+Beach Ring Toss
+Stock: 0
+Price: 36.99
+
+Large Beach Tote
+Stock: 130
+Price: 42.99
+
+Insulated Cooler Bag
+Stock: 37
+Price: 101.99
+
+Microfiber Beach Towel
+Stock: 138
+Price: 35.99
+
+Waterproof Phone Pouch
+Stock: 43
+Price: 45.99
+
+Sand-Free Beach Mat
+Stock: 78
+Price: 91.99
+
